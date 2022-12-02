@@ -14,6 +14,16 @@ for i in range (0, len(list)-1):
     print(" # ", end="")
 print(list[len(list)-1])
 """
+"""
+#Affiche les valeurs de la tab entre les positions 0 et 9 avec un # pour les séparés
+tab = [3, 6, 8, 5, 10, 3, 7, 6, 3, 2]
+for x in tab[0:9] :
+    print(x,end="#")
+    x = x + 1
+#Affiche simplement la valeur en position 10.
+for x in tab[9:10]:
+    print(x)
+"""
 
 """
 #B
@@ -24,9 +34,11 @@ for x in tabl :
 """
 """
 #C
-tabl = [3,6,8,5,10,3,7,6,3,2]
-for x in tabl : 
-    print(x)
+tabl = [3, 6, 8, 5, 10, 3, 7, 6, 3, 2]
+i = 0
+for x in tabl:
+    print(tabl[i])
+    i = i + 1
 """
 """
 #D

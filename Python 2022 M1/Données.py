@@ -1,23 +1,42 @@
 #PS C:\Users\ygoetgheluck\OneDrive - UPEC\M1\Programmation python\Programmation\Exercices>
-'''
+"""
 #Exercice 1 
+#On part du principe que l'on veut recommencer par défault
 choix = True
+#Tant qu'on veut recommencer la fonction suivante se lance : 
 while choix == True :
+#L'utilisateur entre 2 chiffre qu'il veut additionner
     y = int(input("Entrez le premier chiffre : "))
     g = int(input("Entrez le second chiffre : "))
     o = y + g
+#Imprime le résultat et demande à l'utilisateur s'il veut recommencer.
     print ("La somme de",y,"et de",g,"est", o) 
-    choix = input("Recommencer ?" " O : " )
-
+    choix = input("Recommencer ?" " O ou N : " )
+#En fonction de sa réponse l'utilisateur peut relancer le programme ou l'arrêter. 
     if choix == "O"  : 
         choix = True
     else :
         choix = False
         print("Fin")
-'''
+"""
 
 #Exercice 2
-""""
+
+"""
+#Méthode la plus efficace, avec question. 
+#L'utilisateur entre les données qu'il veut lister de manière croissante. 
+import sys
+a = int(sys.argv[1])
+b = int(sys.argv[2])
+c = int(sys.argv[3])
+#Crée une liste des nombre pour faciliter la présentation croissante. 
+list = [a,b,c]
+list = sorted(list)
+print(*list,sep=' ')
+"""
+
+
+"""
 i = int(input("Entrez un nombre: "))
 
 if (i % 2) == 0:
@@ -159,10 +178,8 @@ number_list = [i+1 for i in range(num)]
 while number_list:        
     print(number_list.pop(0),end=",")
 print (x)
-"""
 
-"""
-#4
+#Exercice 4.4
 num = int(input("Entrez un nombre : "))
 i = 0
 for i in range(num) :
@@ -173,8 +190,9 @@ for i in range(num) :
         print(num)
 """
 """
-#5
-num = int(input("Entrez un nombre : "))
+#Exercice 4.5
+import sys
+num = int(sys.argv[1])
 i = 1
 for i in range(num):
     print((i+1),"//",num)
@@ -266,7 +284,7 @@ for i in range(11):
     print (x,"x",y,"=",r)
     y = y + 1
 """
-
+"""
 #2
 import sys
 x = int(sys.argv[1])
@@ -278,7 +296,7 @@ if a == str('+') :
         r = x + y
         print (x,"+",y,"=",r)
         y = y + 1
-
+"""
 
 """
 #3
