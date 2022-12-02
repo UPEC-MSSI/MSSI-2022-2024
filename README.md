@@ -4,8 +4,8 @@
 <h3 align="left"> Pour nous contactez veuillez vous adressez à l'adresse mail suivante : yann.goetgheluck@etu.u-pec.fr
 
 Membres : 
-Samy Marchetti AS <h2>Armetz</h2>
-Yann Goetgheluck AS <h2>Goethegoat</h2>
+<h2>Armetz</h2>
+<h2>Goethegoat</h2>
 
 MSSI 2022-2024
 
