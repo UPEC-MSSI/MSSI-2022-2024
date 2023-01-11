@@ -50,7 +50,7 @@ def exerciceE():
 
 	print(min(result))
 
-# Exercice F, à revoir
+# Exercice F
 def exerciceF():
 	search = int(input("Please enter a number:"))
 	result = []
