@@ -1,9 +1,10 @@
 #c:\Users\ygoetgheluck\OneDrive - UPEC\M1\Programmation python\Programmation\Exercices\Exercice 1.py' 
 #Exercice 1
+import sys
 #1
-""""
-i = 0
-for i in range (4):
+"""
+x = int(sys.argv[1])
+for i in range (x):
     print("*"*4)
 """
 """
@@ -32,7 +33,7 @@ for i in range(x):
 """
 #1 / 3 While
 from asyncore import loop
-x = int(input("Veuillez indiquer l'âge (max 9 : "))
+x = int(input("Veuillez indiquer l'âge (max 9) : "))
 i = 0
 
 while i < x : 

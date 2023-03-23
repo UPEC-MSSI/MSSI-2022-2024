@@ -310,8 +310,128 @@ for i in range(10):
     y = y + 1
 """
 
-"""
+
 #Exercice 6
+"""
 #1
 import sys
+x = int(sys.argv[1])
+r = 1
+for i in range(1, x+1):
+    r *= i
+print("La factorielle de", x, "est", r)
 """
+"""
+#2
+import sys
+x = int(sys.argv[1])
+sum = 0
+for i in range(1, x+1):
+    if i % 2 != 0: # si i est un nombre impair
+        sum += i
+print(sum)
+"""
+"""
+#3
+import sys
+x = int(sys.argv[1])
+for i in range(1,x+1):
+    if x % i == 0 :
+        print (i ,'|', end=' ')
+"""
+#4
+
+
+"""
+def decaled(list):
+    last = list[-1]
+    for i in range (len(list)-1,0,-1):
+        list[i] = list[i-1]
+    list[0] = last
+    return(list)
+
+list = [1,2,3,4,5,6,7,8]
+list = decaled(list)
+print (list)
+"""
+
+
+
+def reverse(list):
+    taille = len(list)
+    for i in range(0,taille//2):
+        x = list[i]
+        list[i] = list[taille-(i+1)]
+        list[taille-(i+1)]=x
+    return(list)
+
+def reversepro(list):
+    taille = len(list)
+    for i in range(0,taille//2):
+        x = list[i]
+        list[i] = list[taille-(i+1)]
+        list[taille-(i+1)]=x
+
+def occurence(v, t):
+    cpt = 0
+    for i in range (0,len(t)):
+        if (t[i] == v):
+            cpt += 1
+    return cpt
+
+
+
+
+def somme(list):
+    resultat = 0
+    for i in range(len(list)):
+        resultat += list[i]
+    return(resultat)
+
+
+def multi(list):
+    resultat = 1
+    for i in range(len(list)):
+        resultat = resultat * list[i]
+    return(resultat)
+
+def div(list):
+    resultat = 1
+    for i in range(len(list)):
+        resultat = resultat / list[i]
+    return(resultat)
+
+def sous(list):
+    resultat = 0
+    for i in range(len(list)):
+        resultat = resultat - list[i]
+    return(resultat)
+
+
+
+def p_grand(list):
+    plu_grand = list[0]
+    for i in list:
+        if i > plu_grand :
+            plu_grand = i
+    return plu_grand
+
+
+def moy(list):
+    r = somme(list)/len(list)
+    return r
+
+list = [1,5,8,1,5,1,1]
+r = moy(list)
+
+
+
+def fact(n):
+    if n == 0:
+        return 1
+    else :
+        return n * fact(n-1)
+
+n = 5
+r = fact(n)
+print (r)

@@ -1,5 +1,13 @@
 #PS C:\Users\ygoetgheluck\OneDrive - UPEC\M1\Programmation python\Programmation\Exercices>
 
+"""
+import sys
+list = [0] * (len(sys.argv) -1)
+for i in range(0,len(list)):
+    list[i] = int(sys.argv[i+1])
+print(list)
+"""
+
 #Exercice 1
 """
 #A
@@ -76,12 +84,12 @@ list = list[-1:] + list[:-1]
 print(list)
 """
 
-"""
+
 #i
 list =  [3, 6, 8, 5, 10, 3, 7, 6, 3, 2]
 list = list[+1:] + list[:+1]
 print(list)
-"""
+
 """
 #J
 list =  [3, 6, 8, 5, 10, 3, 7, 6, 3, 2]
