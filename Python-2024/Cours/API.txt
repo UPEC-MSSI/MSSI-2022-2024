@@ -1,0 +1,73 @@
+API = Application Programmin Interface
+Vise à aider l'utilisateur d'un ordinateur pour le traitement d'une tâche précise. 
+
+Différents types d'API 
+
+- SOAP (un peu)
+	Simple Object Access Protocol = standardise l'échange des info entre API
+- REST (beaucoup)
+	Representation State Transfer = Style d'achitecture d'API
+
+
+Utilisez REST si vous souhaitez adopter une API à grande échelle ou si votre API
+est destinée aux applications mobiles. Utilisez SOAP si vous traitez des
+opérations transactionnelles et si vous avez déjà un public satisfait de cette
+technologie.
+
+Format json ou xml utilisé par les API
+Nécessite des librairie : resquests = python pour JSON
+			  urllib ou JSON
+
+Requests pour récupérer des données :
+	import requests
+
+	response = requests.get("http://ip-api.com/json/24.48.0.1")
+	json = response.json()
+
+	print(json["regionName"])
+	---------------
+	[RESULT] Quebec
+
+
+
+Check if requête http a fonctionné : 
+	import requests
+
+	response = requests.get("http://ip-api.com/json/24.48.0.1")
+
+	if response.status_code == 200:
+		json = response.json()
+
+	print(json["regionName"])
+
+
+
+
+ElementTree = classe
+
+import requests
+from xml.etree import ElementTree
+
+response = requests.get("http://ip-api.com/xml/24.48.0.1")
+
+tree = ElementTree.fromstring(response.content)
+
+for child in tree:
+	print(f"Tag: {child.tag} - Texte: {child.text}")
+
+
+Récupérer le contnu avec LXML (Librairie) avec des xpath
+
+	import requests
+	from lxml import etree
+
+	response = requests.get("http://ip-api.com/xml/24.48.0.1")
+
+	tree = etree.fromstring(response.content)
+	
+	status = tree.xpath("//query/status/text()")
+	country = tree.xpath("//query/country/text()")[0]
+	print(status, country)
+	
+	[RESULT]
+	['success'] Canada

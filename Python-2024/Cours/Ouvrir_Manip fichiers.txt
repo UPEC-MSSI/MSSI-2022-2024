@@ -1,0 +1,137 @@
+Fichier txt avec python3 : 
+ouverture et lecture : 
+with open("esmeralda.txt","r") as textfile:
+	print(textfile.readlines())
+
+pour lire, ligne par ligne le fichier : 
+with open("esmeralda.txt","r") as textfile:
+	for line in textfile:
+		print(line)
+
+
+Ecrire dans un fichier txt : 
+with open("fichier-de-sortie.txt","w") as textfile:
+	textfile.write("Ma première ligne")
+==> Write
+
+with open("fichier-de-sortie.txt","a") as textfile:
+	textfile.write("Ma première ligne")
+==> Add
+
+
+"r" = read
+"w" = write
+"a" = add
+Le gestionnaire de contexte with facilite la lecture/écriture des fichiers.
+En écriture with créé un nouveau fichier si ce dernier n'existe pas
+
+
+
+Fichier CSV avec python3 : 
+READ
+import csv
+
+with open("fichier.csv","r") as csv_file:
+	csv_reader = csv.reader(csv_file, delimiter=';')
+	
+	for row in csv_reader:
+		print(f"{row[0]} - {row[1]} - {row[2]}")
+
+
+Class DictReader 
+
+import csv
+with open('fichier.csv', newline='') as csvfile:
+	reader = csv.DictReader(csvfile)
+	for row in reader:
+		print(row['first_name'], row['last_name'])
+
+
+Avec Panda 
+import pandas as pd 
+df = pd.read_csv("fichier.csv", sep=";")
+
+
+WRITE 
+import csv
+with open('fichier.csv','w', newline='') as csvfile:
+	writer = csv.writer(csvfile, delimiter=';')
+	
+	#premiere ligne du fichier
+	writer.writerow(['colonne1','colonne2','Colonne3'])
+
+
+DictWriter
+import csv
+with open('names.csv','w', newline='') as csvfile:
+	fieldnames = ['first_name','last_name']
+	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+	writer.writeheader()
+	writer.writerow({'first_name': 'Elie','last_name': 'Mane'})
+	writer.writerow({'first_name': 'Pierre','last_name': 'Bouazo'})
+	writer.writerow({'first_name': 'Amin','last_name': 'Benardi'})
+
+
+
+
+
+JSON 
+Le json c'est du texte javascript.
+C'est la nouvelle norme d'échange inter et intra applications
+Le remplaçant du format xml
+
+
+READ : 
+import json
+# Lire un fichier au format json
+with open('example.json','r') as myfile:
+	data = json.load(myfile)
+# afficher des valeurs
+print(f"Valeur: {obj["nom_de_clé"]}")
+
+
+
+DevelperDict : 
+import json
+employee="""{
+	"name":"jane doe",
+	"salary":9000,
+	"pastjobs":[
+		"Developper",
+		"Ux Designer"
+	]
+}
+
+#Conversion d'une chaine json en dictionnaire : 
+develperDict = json.loads(employee)
+
+print(developerDict["name"])
+print(developerDict["salary"])
+
+
+SAUVERGARDER : 
+json.dump() = sauvegarde complètement les données d'un fichier
+	import json
+	# python object(dictionary) to be dumped
+	dico ={
+		1:'Lasagnes',
+		2:'Frites'
+		}
+	with open("fichier.json","w") as json_file:
+json.dump(dico, json_file, indent=6)
+
+
+json.dumps() = convertir des objets python Listes, Dictionnaires au format json. 
+	import json
+	# création d'un dictionnaire
+	dico ={
+		1:'Lasagnes',
+		2:'Frites'
+		}
+
+	# Convertit le dictionnaire d'entrée en
+	# chaîne et le stocke dans json_string
+	json_string = json.dumps(dico)
+	print('str json semblable au dico:', json_string)
+
